@@ -106,4 +106,33 @@ RSpec.describe Skill do
       end
     end
   end
+
+  context "#update_description" do
+
+    context "one skill object in the database" do
+      let!(:skill){ Skill.create(name: "Camoflauge", training_path: training_path) }
+
+      it "should save the description to the database" do
+        skill.update_description("Looking like other things")
+
+        actual = Environment.database.execute("SELECT name, description FROM skills")
+        expected = [[ "Camoflauge", "Looking like other things"]]
+        expect(actual).to eq expected
+      end
+    end
+
+    context "multiple skill objects in the database" do
+      let!(:skill1){ Skill.create(name: "Martial Arts", training_path: training_path) }
+      let!(:skill2){ Skill.create(name: "Magic", training_path: training_path) }
+
+
+      it "should save the description to the database" do
+        skill1.update_description("Beating stuff up")
+
+        actual = Environment.database.execute("SELECT name, description FROM skills WHERE name='Martial Arts'")
+        expected = [[ "Martial Arts", "Beating stuff up" ]]
+        expect(actual).to eq expected
+      end
+    end
+  end
 end

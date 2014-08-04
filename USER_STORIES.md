@@ -1,14 +1,14 @@
 Main menu has progress graph (5)
   -> Mark a skill as mastered (3: individually)
-    -> View an individual skill (2: individually)
-      -> Enter skill descriptions (1: individually)
+    <!-- -> View an individual skill (2: individually) -->
+      <!-- -> Enter skill descriptions (1: individually) -->
   -> Import data (4: In Class)
 Give user better prompts (6)
 Allow users to correct their input (7)
 
 # User Types
 
-* Survival Sherpas: The people writting training paths and their skills
+* Survival Sherpas: The people writing training paths and their skills
 * Students: The people learning/achieving skills
 
 # Stories
@@ -46,5 +46,3 @@ Acceptance Criteria:
   * The datetime when the skill was finally mastered is stored.
 * If a user updates their skill mastery, the existing achievement record is updated.
 * If the skill is mastered, instead of being prompted with "Have you mastered this skill?" the user is shown "You mastered this skill on August 14th at 14:40" (or similar).
-
-
