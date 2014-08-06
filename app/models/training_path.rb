@@ -1,4 +1,4 @@
-class TrainingPath
+class TrainingPath < ActiveRecord::Base
   include Comparable
 
   attr_reader :errors, :id, :name
